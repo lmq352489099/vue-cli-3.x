@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <button @click="hanleClick('back')">返回上一页</button>
+    <button @click="hanleClick('back')">返回上一页12</button>
     <button @click="hanleClick('push')">跳转到parent</button>
     <button @click="hanleClick('replace')">替换到parent</button>
   </div>
