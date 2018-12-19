@@ -2,9 +2,35 @@ import Home from '@/views/Home.vue'
 export default [{
     path: '/',
     //别名
-    alias:"/home_page",
+    alias: "/home_page",
     name: 'home',
-    component: Home
+    component: Home,
+    /**
+     * es6 写法  如果不是es6 就是这样子写法
+     * 返回一个对象的话就用括号包着  
+     *  props: route => {
+     * retrue {
+     *     //
+     *    }
+     * }
+     * 
+     *  */
+    //router里面的方法
+    props: router => ({
+      food: router.query.food
+    }),
+    //路由独享守卫
+    beforeEnter: (to, from, next) => {
+      // ...
+      // if (from.name === 'about') alert('这是从about页来的')
+      // else alert('这不是从about页来的')
+      next()
+    }
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/login.vue")
   },
   {
     path: '/about',
@@ -12,12 +38,19 @@ export default [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '@/views/About.vue')
+    component: () => import( /* webpackChunkName: "about" */ '@/views/About.vue'),
+    props: {
+      food: "banner"
+    },
+    meta:{
+      title:'关于'
+    }
   },
   {
     path: "/argu/:name",
     name: "argu",
-    component: () => import('@/views/argu.vue')
+    component: () => import('@/views/argu.vue'),
+    props: true
   },
   {
     path: "/parent",
@@ -47,4 +80,10 @@ export default [{
       }
     }
   },
+  //路由规则,*是匹配任何的路径
+  //前面找不到就会报404
+  {
+    path: "*",
+    component: () => import('@/views/error_404.vue')
+  }
 ]
