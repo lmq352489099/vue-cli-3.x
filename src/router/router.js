@@ -42,8 +42,8 @@ export default [{
     props: {
       food: "banner"
     },
-    meta:{
-      title:'关于'
+    meta: {
+      title: '关于'
     }
   },
   {
@@ -79,6 +79,10 @@ export default [{
         name: 'home'
       }
     }
+  },
+  {
+    path: "/store",
+    component: () => import('@/views/store.vue')
   },
   //路由规则,*是匹配任何的路径
   //前面找不到就会报404
