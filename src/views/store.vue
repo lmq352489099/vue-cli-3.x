@@ -6,6 +6,11 @@
     <AShow :content="inputValue"></AShow>
     <p>appName:{{appName}},appNameWithVersion :{{appNameWithVersion}}</p>
     <p>userName:{{userName}} , firstLetter is {{firstLetter}}</p>
+    <button @click="handleChangeAppName">修改appName</button>
+    <p>{{appVersion}}</p>
+    <button @click="changeUserName">修改用户名</button>
+    <button @click="registerModel">动态注册模块</button>
+    <p v-for="(li,index) in todoList" :key="index">{{li}}</p>
   </div>
 </template>
 
@@ -17,7 +22,7 @@ import AShow from "_c/Ashow.vue";
 //就不用再写模块名称了
 // import { createNamespacedHelpers } from "vuex";
 // const { mapState } = createNamespacedHelpers("user");
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 export default {
   name: "store",
   data() {
@@ -34,15 +39,17 @@ export default {
     //   'appName'
     // ])
     ...mapState({
-      appName: state => state.appName,
-      userName: state => state.user.userName
+      // appName: state => state.appName,
+      userName: state => state.user.userName,
+      appVersion: state => state.appVersion,
+      todoList: state => (state.user.todo ? state.user.todo.todoList : [])
     }),
     // appNameWithVersion() {
     //   return this.$store.getters.appNameWithVersion;
     // } ,
     ...mapGetters(["appNameWithVersion"]),
     ...mapGetters("user", ["firstLetter"]),
-    //就不用再写模块名称了
+    //有命名空间就不用再写模块名称了
     // ...mapState({
     //   userName: state => state.userName
     // })
@@ -51,9 +58,18 @@ export default {
     //   userName: state => state.userName
     // })
 
-    // appName() {
-    //   return this.$store.state.appName;
+    // appName: {
+    //   set: function(newValue) {
+    //     this.inputValue = newValue + "sd";
+    //   },
+    //   get: function() {
+    //     this.inputValue = newValue + "sd";
+    //   }
     // },
+
+    appName() {
+      return this.$store.state.appName;
+    },
     // userName() {
     //   this.$store.state.user.userName;
     // }
@@ -65,6 +81,41 @@ export default {
   methods: {
     handleInput(val) {
       this.inputValue = val;
+    },
+    ...mapMutations(["SET_APP_NAME"]),
+    ...mapMutations("user", ["SET_USER_NAME"]),
+    ...mapActions(["updateAppName"]),
+    handleChangeAppName() {
+      // this.$store.commit('SET_APP_NAME',{
+      //   appName:"newAppName"
+      // })
+      // this.$store.commit({
+      //   //type 就是你要提交方法的名称
+      //   type: "SET_APP_NAME",
+      //   appName: "newAppName"
+      // });
+      this.SET_APP_NAME({
+        appName: "newAppName"
+      });
+      this.$store.commit("SET_APP_VERSION");
+      this.updateAppName();
+    },
+    changeUserName() {
+      this.SET_USER_NAME("lmq");
+      this.$store.dispatch("updateAppName", "123");
+    },
+    registerModel() {
+      //动态添加模块的名称
+      // this.$store.registerModule("todo", {
+      //   state: {
+      //     todoList: ["学习mutations", "学习actions"]
+      //   }
+      // });
+      this.$store.registerModule(["user", "todo"], {
+        state: {
+          todoList: ["学习mutations", "学习actions"]
+        }
+      });
     }
   }
 };

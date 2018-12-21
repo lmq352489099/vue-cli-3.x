@@ -7,10 +7,22 @@ const getters = {
   }
 }
 const mutations = {
-  //
+  SET_USER_NAME(state, params) {
+    state.userName = params
+  }
 }
 const actions = {
-  //
+  //里面包含一个对象,用来提交mutations
+  //第二参数当前state的
+  //rootStete 根实例上的
+  //dispatch调用模块
+  updateUserName({ commit, state, rootStete,dispatch }) {
+    // rootStete.appName
+    dispatch('xxx','')
+  },
+  xxx(){
+
+  }
 }
 export default {
   //命名空间
@@ -18,5 +30,8 @@ export default {
   getters,
   state,
   mutations,
-  actions
+  actions,
+  modules: {
+    //
+  }
 }

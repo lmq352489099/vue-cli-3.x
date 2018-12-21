@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    {{food}}
     <button @click="hanleClick('back')">返回上一页12</button>
     <button @click="hanleClick('push')">跳转到parent</button>
     <button @click="hanleClick('replace')">替换到parent</button>
@@ -40,7 +41,7 @@ export default {
     // const leave = confirm("你确定要离开吗?");
     // if (leave) next();
     // else next(false);
-    next()
+    next();
   },
   methods: {
     hanleClick(type) {
