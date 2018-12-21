@@ -1,7 +1,9 @@
 <template>
   <div>
     <!-- v-model="inputvalue"  双向数据绑定 -->
-    <a-input @input="handleInput"></a-input>
+    <!-- <a-input @input="handleInput"></a-input> -->
+    <a-input v-model="stateValue"></a-input>
+    <p>{{stateValue}}</p>
     <p>{{inputValue}} => lastletter is {{inputValueLastLetter}}</p>
     <AShow :content="inputValue"></AShow>
     <p>appName:{{appName}},appNameWithVersion :{{appNameWithVersion}}</p>
@@ -44,6 +46,14 @@ export default {
       appVersion: state => state.appVersion,
       todoList: state => (state.user.todo ? state.user.todo.todoList : [])
     }),
+    stateValue: {
+      get() {
+        return this.$store.state.stateValue;
+      },
+      set(newValie) {
+        this.SET_STATE_VALUE(newValie);
+      }
+    },
     // appNameWithVersion() {
     //   return this.$store.getters.appNameWithVersion;
     // } ,
@@ -82,7 +92,7 @@ export default {
     handleInput(val) {
       this.inputValue = val;
     },
-    ...mapMutations(["SET_APP_NAME"]),
+    ...mapMutations(["SET_APP_NAME", "SET_STATE_VALUE"]),
     ...mapMutations("user", ["SET_USER_NAME"]),
     ...mapActions(["updateAppName"]),
     handleChangeAppName() {
@@ -103,6 +113,7 @@ export default {
     changeUserName() {
       this.SET_USER_NAME("lmq");
       this.$store.dispatch("updateAppName", "123");
+      // this.$store.state.user.userName = "haha"; 错误的方式
     },
     registerModel() {
       //动态添加模块的名称
@@ -116,6 +127,9 @@ export default {
           todoList: ["学习mutations", "学习actions"]
         }
       });
+    },
+    handleStateValueChange(value) {
+      this.SET_STATE_VALUE(value);
     }
   }
 };

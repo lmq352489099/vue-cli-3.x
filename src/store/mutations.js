@@ -12,6 +12,9 @@ const mutations = {
     //第三个是你你要设置的值
     vue.set(state, 'appVersion', 'v2.0')
     // state.appVersion = 'v2.0'
+  },
+  SET_STATE_VALUE(state, value) {
+    state.stateValue = value
   }
 }
 export default mutations
