@@ -15,6 +15,7 @@ const router = new Router({
   routes
 })
 
+//默认这是一个请求成功的数据
 const HAS_LOGINEG = true
 
 //路由守卫

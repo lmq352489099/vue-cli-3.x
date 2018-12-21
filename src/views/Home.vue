@@ -4,6 +4,7 @@
     <button @click="hanleClick('back')">返回上一页12</button>
     <button @click="hanleClick('push')">跳转到parent</button>
     <button @click="hanleClick('replace')">替换到parent</button>
+    <button @click="getInfo">请求数据</button>
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 
+import { getUserInfo } from "@/api/user";
 export default {
   name: "home",
   components: {
@@ -56,6 +58,14 @@ export default {
       }
       //用replace 是当前的浏览页 替换成
       else if (type === "replace") this.$router.replace({ name: "parent" });
+    },
+    getInfo() {
+      // getUserInfo('http://localhost:3000/getCategorySub',{ userId: 21 }).then(res => {
+      //   console.log("res", res);
+      // });
+      getUserInfo({ userId: 21 }).then(res => {
+        console.log("res", res);
+      });
     }
   }
 };
