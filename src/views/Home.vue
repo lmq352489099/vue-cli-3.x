@@ -4,7 +4,8 @@
     <button @click="hanleClick('back')">返回上一页12</button>
     <button @click="hanleClick('push')">跳转到parent</button>
     <button @click="hanleClick('replace')">替换到parent</button>
-    <button @click="getInfo">请求数据</button>
+    <button @click="getInfo" :style="{background:bgColor}">请求数据</button>
+    <img :src="url" alt>
   </div>
 </template>
 
@@ -17,6 +18,12 @@ export default {
   name: "home",
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      url: "",
+      bgColor: ""
+    };
   },
   props: {
     food: {
@@ -64,7 +71,9 @@ export default {
       //   console.log("res", res);
       // });
       getUserInfo({ userId: 21 }).then(res => {
-        console.log("res", res);
+        console.log("res", res.data);
+        this.url = res.data.img;
+        this.bgColor = res.data.color;
       });
     }
   }

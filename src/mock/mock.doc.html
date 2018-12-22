@@ -1,0 +1,683 @@
+<!DOCTYPE html><html><head>
+      <title>mock.doc</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="mock%E7%AE%80%E6%98%8E%E6%96%87%E6%A1%A3">Mock&#x7B80;&#x660E;&#x6587;&#x6863;</h1>
+
+<h2 class="mume-header" id="mockmock">Mock.mock()</h2>
+
+<ul>
+<li>Mock.mock( requestUrl?, requestType?, template|function(options) )</li>
+<li>Mock.mock( template )</li>
+<li>Mock.mock( requestUrl, template )</li>
+<li>Mock.mock( requestUrl, requestType, template )</li>
+<li>Mock.mock( requestUrl, requestType, function(options) )</li>
+</ul>
+<blockquote>
+<p>requestUrl: &#x8981;&#x62E6;&#x622A;&#x7684;URL&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;<br><br>
+equestType: &#x8981;&#x62E6;&#x622A;&#x7684;&#x8BF7;&#x6C42;&#x7C7B;&#x578B;&#xFF0C;get/post/put/delete/options...<br><br>
+template: &#x6570;&#x636E;&#x6A21;&#x677F;<br><br>
+function(options)&#xFF1A;&#x751F;&#x6210;&#x54CD;&#x5E94;&#x6570;&#x636E;&#x7684;&#x51FD;&#x6570;&#xFF0C;options --&gt; { url, type, body }</p>
+</blockquote>
+<hr>
+<h2 class="mume-header" id="%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83">&#x8BED;&#x6CD5;&#x89C4;&#x8303;</h2>
+
+<h3 class="mume-header" id="%E6%95%B0%E6%8D%AE%E6%A8%A1%E6%9D%BF%E5%AE%9A%E4%B9%89">&#x6570;&#x636E;&#x6A21;&#x677F;&#x5B9A;&#x4E49;</h3>
+
+<blockquote>
+<p>&#x6570;&#x636E;&#x6A21;&#x677F;&#x4E2D;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x7531;3&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A; <strong>&#x5C5E;&#x6027;&#x540D;|&#x751F;&#x6210;&#x89C4;&#x5219;&#xFF1A;&#x5C5E;&#x6027;&#x503C;</strong></p>
+</blockquote>
+<ol>
+<li>&apos;name|min-max&apos;: value</li>
+<li>&apos;name|count&apos;: value</li>
+<li>&apos;name|min-max.dmin-dmax&apos;: value</li>
+<li>&apos;name|min-max.dcount&apos;: value</li>
+<li>&apos;name|count.dmin-dmax&apos;: value</li>
+<li>&apos;name|count.dcout&apos;: value</li>
+<li>&apos;name|+step&apos;: value</li>
+</ol>
+<p><em>&#x5C5E;&#x6027;&#x503C;</em>&#x4E2D;&#x53EF;&#x4EE5;&#x5305;&#x542B;@&#x5360;&#x4F4D;&#x7B26;<br>
+<em>&#x5C5E;&#x6027;&#x503C;</em>&#x8FD8;&#x6307;&#x5B9A;&#x4E86;&#x6700;&#x7EC8;&#x503C;&#x7684;&#x521D;&#x59CB;&#x503C;&#x548C;&#x7C7B;&#x578B;</p>
+<h4 class="mume-header" id="1%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E5%AD%97%E7%AC%A6%E4%B8%B2">1.&#x5C5E;&#x6027;&#x503C;&#x662F;&#x5B57;&#x7B26;&#x4E32;</h4>
+
+<ol>
+<li>&apos;name|min-max&apos;: string</li>
+</ol>
+<blockquote>
+<p>&#x901A;&#x8FC7;&#x91CD;&#x590D; string &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; min&#xFF0C;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; max</p>
+</blockquote>
+<ol start="2">
+<li>&apos;name|count&apos;: string</li>
+</ol>
+<blockquote>
+<p>&#x901A;&#x8FC7;&#x91CD;&#x590D; string &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x7B49;&#x4E8E; count</p>
+</blockquote>
+<h4 class="mume-header" id="2%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E6%95%B0%E5%AD%97">2.&#x5C5E;&#x6027;&#x503C;&#x662F;&#x6570;&#x5B57;</h4>
+
+<ol>
+<li>&apos;name|+1&apos;: number</li>
+</ol>
+<blockquote>
+<p>&#x5C5E;&#x6027;&#x503C;&#x81EA;&#x52A8;&#x52A0; 1&#xFF0C;&#x521D;&#x59CB;&#x503C;&#x4E3A; number</p>
+</blockquote>
+<ol start="2">
+<li>&apos;name|min-max&apos;: number</li>
+</ol>
+<blockquote>
+<p>&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; min&#x3001;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; max &#x7684;&#x6574;&#x6570;&#xFF0C;&#x5C5E;&#x6027;&#x503C; number &#x53EA;&#x662F;&#x7528;&#x6765;&#x786E;&#x5B9A;&#x7C7B;&#x578B;</p>
+</blockquote>
+<ol start="3">
+<li>&apos;name|min-max.dmin-dmax&apos;: number</li>
+</ol>
+<blockquote>
+<p>&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x6574;&#x6570;&#x90E8;&#x5206;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; min&#x3001;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; max&#xFF0C;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#x4FDD;&#x7559; dmin &#x5230; dmax &#x4F4D;</p>
+</blockquote>
+<h4 class="mume-header" id="3%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E5%B8%83%E5%B0%94%E5%80%BC">3.&#x5C5E;&#x6027;&#x503C;&#x662F;&#x5E03;&#x5C14;&#x503C;</h4>
+
+<ol>
+<li>&apos;name|1&apos;: boolean</li>
+</ol>
+<blockquote>
+<p>&#x968F;&#x673A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x503C;&#x4E3A; true &#x7684;&#x6982;&#x7387;&#x662F; 1/2&#xFF0C;&#x503C;&#x4E3A; false &#x7684;&#x6982;&#x7387;&#x540C;&#x6837;&#x662F; 1/2</p>
+</blockquote>
+<ol start="2">
+<li>&apos;name|min-max&apos;: value</li>
+</ol>
+<blockquote>
+<p>&#x968F;&#x673A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x503C;&#x4E3A; value &#x7684;&#x6982;&#x7387;&#x662F; min / (min + max)&#xFF0C;&#x503C;&#x4E3A; !value &#x7684;&#x6982;&#x7387;&#x662F; max / (min + max)</p>
+</blockquote>
+<h4 class="mume-header" id="4%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E5%AF%B9%E8%B1%A1">4.&#x5C5E;&#x6027;&#x503C;&#x662F;&#x5BF9;&#x8C61;</h4>
+
+<ol>
+<li>&apos;name|count&apos;: object</li>
+</ol>
+<blockquote>
+<p>&#x4ECE;&#x5C5E;&#x6027;&#x503C; object &#x4E2D;&#x968F;&#x673A;&#x9009;&#x53D6; count &#x4E2A;&#x5C5E;&#x6027;</p>
+</blockquote>
+<ol start="2">
+<li>&apos;name|min-max&apos;: object</li>
+</ol>
+<blockquote>
+<p>&#x4ECE;&#x5C5E;&#x6027;&#x503C; object &#x4E2D;&#x968F;&#x673A;&#x9009;&#x53D6; min &#x5230; max &#x4E2A;&#x5C5E;&#x6027;</p>
+</blockquote>
+<h4 class="mume-header" id="5%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E6%95%B0%E7%BB%84">5.&#x5C5E;&#x6027;&#x503C;&#x662F;&#x6570;&#x7EC4;</h4>
+
+<ol>
+<li>&apos;name|1&apos;: array</li>
+</ol>
+<blockquote>
+<p>&#x4ECE;&#x5C5E;&#x6027;&#x503C; array &#x4E2D;&#x968F;&#x673A;&#x9009;&#x53D6; 1 &#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4F5C;&#x4E3A;&#x6700;&#x7EC8;&#x503C;</p>
+</blockquote>
+<ol start="2">
+<li>&apos;name|+1&apos;: array</li>
+</ol>
+<blockquote>
+<p>&#x4ECE;&#x5C5E;&#x6027;&#x503C; array &#x4E2D;&#x987A;&#x5E8F;&#x9009;&#x53D6; 1 &#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4F5C;&#x4E3A;&#x6700;&#x7EC8;&#x503C;</p>
+</blockquote>
+<ol start="3">
+<li>&apos;name|min-max&apos;: array</li>
+</ol>
+<blockquote>
+<p>&#x901A;&#x8FC7;&#x91CD;&#x590D;&#x5C5E;&#x6027;&#x503C; array &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x6570;&#x7EC4;&#xFF0C;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; min&#xFF0C;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; max</p>
+</blockquote>
+<ol start="4">
+<li>&apos;name|count&apos;: array</li>
+</ol>
+<blockquote>
+<p>&#x901A;&#x8FC7;&#x91CD;&#x590D;&#x5C5E;&#x6027;&#x503C; array &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x6570;&#x7EC4;&#xFF0C;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x4E3A; count</p>
+</blockquote>
+<h4 class="mume-header" id="6%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E5%87%BD%E6%95%B0">6.&#x5C5E;&#x6027;&#x503C;&#x662F;&#x51FD;&#x6570;</h4>
+
+<ol>
+<li>&apos;name&apos;: function</li>
+</ol>
+<blockquote>
+<p>&#x6267;&#x884C;&#x51FD;&#x6570; function&#xFF0C;&#x53D6;&#x5176;&#x8FD4;&#x56DE;&#x503C;&#x4F5C;&#x4E3A;&#x6700;&#x7EC8;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E3A;&#x5C5E;&#x6027; &apos;name&apos; &#x6240;&#x5728;&#x7684;&#x5BF9;&#x8C61;</p>
+</blockquote>
+<h4 class="mume-header" id="7%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">7.&#x5C5E;&#x6027;&#x503C;&#x662F;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h4>
+
+<ol>
+<li>&apos;name&apos;: regexp</li>
+</ol>
+<blockquote>
+<p>&#x6839;&#x636E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F; regexp &#x53CD;&#x5411;&#x751F;&#x6210;&#x53EF;&#x4EE5;&#x5339;&#x914D;&#x5B83;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
+</blockquote>
+<h3 class="mume-header" id="%E6%95%B0%E6%8D%AE%E5%8D%A0%E4%BD%8D%E7%AC%A6%E5%AE%9A%E4%B9%89">&#x6570;&#x636E;&#x5360;&#x4F4D;&#x7B26;&#x5B9A;&#x4E49;</h3>
+
+<ol>
+<li>&#x7528; @ &#x6765;&#x6807;&#x8BC6;&#x5176;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x662F; &#x5360;&#x4F4D;&#x7B26;</li>
+<li>&#x5360;&#x4F4D;&#x7B26; &#x5F15;&#x7528;&#x7684;&#x662F; Mock.Random &#x4E2D;&#x7684;&#x65B9;&#x6CD5;</li>
+<li>&#x901A;&#x8FC7; Mock.Random.extend() &#x6765;&#x6269;&#x5C55;&#x81EA;&#x5B9A;&#x4E49;&#x5360;&#x4F4D;&#x7B26;</li>
+<li>&#x5360;&#x4F4D;&#x7B26; &#x4E5F;&#x53EF;&#x4EE5;&#x5F15;&#x7528; &#x6570;&#x636E;&#x6A21;&#x677F; &#x4E2D;&#x7684;&#x5C5E;&#x6027;</li>
+<li>&#x5360;&#x4F4D;&#x7B26; &#x4F1A;&#x4F18;&#x5148;&#x5F15;&#x7528; &#x6570;&#x636E;&#x6A21;&#x677F; &#x4E2D;&#x7684;&#x5C5E;&#x6027;</li>
+<li>&#x5360;&#x4F4D;&#x7B26; &#x652F;&#x6301; &#x76F8;&#x5BF9;&#x8DEF;&#x5F84; &#x548C; &#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</li>
+</ol>
+<hr>
+<h2 class="mume-header" id="mocksetup">Mock.setup()</h2>
+
+<blockquote>
+<p>&#x914D;&#x7F6E;Ajax&#x8BF7;&#x6C42;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x6682;&#x65F6;&#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x6709;timeout</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">  Mock<span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    timeout<span class="token punctuation">:</span> <span class="token number">500</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  Mock<span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    timeout<span class="token punctuation">:</span> <span class="token string">&apos;100-600&apos;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><hr>
+<h2 class="mume-header" id="mockrandom">Mock.Random</h2>
+
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">  <span class="token keyword">const</span> Random <span class="token operator">=</span> Mock<span class="token punctuation">.</span>Random
+  Random<span class="token punctuation">.</span><span class="token function">email</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; sd.sdf@oksd.com</span>
+  Mock<span class="token punctuation">.</span><span class="token function">mock</span><span class="token punctuation">(</span><span class="token string">&apos;@email&apos;</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; sd.sdf@oksd.com</span>
+  Mock<span class="token punctuation">.</span><span class="token function">mock</span><span class="token punctuation">(</span><span class="token punctuation">{</span> email<span class="token punctuation">:</span> <span class="token string">&apos;sd.sdf@oksd.com&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; { email: &quot;sd.sdf@oksd.com&quot; }</span>
+</pre><h3 class="mume-header" id="mockrandom%E6%8F%90%E4%BE%9B%E7%9A%84%E5%AE%8C%E6%95%B4%E6%96%B9%E6%B3%95%E5%8D%A0%E4%BD%8D%E7%AC%A6">Mock.Random&#x63D0;&#x4F9B;&#x7684;&#x5B8C;&#x6574;&#x65B9;&#x6CD5;&#xFF08;&#x5360;&#x4F4D;&#x7B26;&#xFF09;:</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Basic</td>
+<td style="text-align:left">boolean, natural, integer, float, character, string, range, date, time, datetime, now</td>
+</tr>
+<tr>
+<td style="text-align:left">Image</td>
+<td style="text-align:left">image, dataImage</td>
+</tr>
+<tr>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">color</td>
+</tr>
+<tr>
+<td style="text-align:left">Text</td>
+<td style="text-align:left">paragraph, sentence, word, title, cparagraph, csentence, cword, ctitle</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">first, last, name, cfirst, clast, cname</td>
+</tr>
+<tr>
+<td style="text-align:left">Web</td>
+<td style="text-align:left">url, domain, email, ip, tld</td>
+</tr>
+<tr>
+<td style="text-align:left">Address</td>
+<td style="text-align:left">area(region, province, city(bool), county(bool), zip), region</td>
+</tr>
+<tr>
+<td style="text-align:left">Helper</td>
+<td style="text-align:left">capitalize(&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;), upper(&#x5927;&#x5199;), lower(&#x5C0F;&#x5199;), pick(&#x4ECE;&#x6570;&#x7EC4;&#x4EFB;&#x53D6;&#x4E00;&#x4E2A;), shuffle(&#x6253;&#x4E71;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x987A;&#x5E8F;)</td>
+</tr>
+<tr>
+<td style="text-align:left">Miscellaneous</td>
+<td style="text-align:left">guid, id</td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="basic">Basic</h4>
+
+<ol>
+<li>Random.boolean(min?, max?, current? )</li>
+<li>Random.natural(min?, max? )</li>
+<li>Random.integer(min?, max? )</li>
+<li>Random.float( min?, max?, dmin?, dmax? )</li>
+<li>Random.character( pool? ) // pool =&gt; lower/upper/number/symbol</li>
+<li>Random.string( pool?, min?, max? ) // pool =&gt; lower/upper/number/symbol</li>
+<li>Random.range( start?, stop, step? )</li>
+</ol>
+<h4 class="mume-header" id="date">Date</h4>
+
+<ol>
+<li>Random.date( format? )</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Format</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">yyyy</td>
+<td style="text-align:left">A full numeric representation of a year, 4 digits</td>
+<td style="text-align:left">1999 or 2003</td>
+</tr>
+<tr>
+<td style="text-align:left">yy</td>
+<td style="text-align:left">A two digit representation of a year</td>
+<td style="text-align:left">99 or 03</td>
+</tr>
+<tr>
+<td style="text-align:left">y</td>
+<td style="text-align:left">A two digit representation of a year</td>
+<td style="text-align:left">99 or 03</td>
+</tr>
+<tr>
+<td style="text-align:left">MM</td>
+<td style="text-align:left">Numeric representation of a month, with leading zeros</td>
+<td style="text-align:left">01 to 12</td>
+</tr>
+<tr>
+<td style="text-align:left">M</td>
+<td style="text-align:left">Numeric representation of a month, without leading zeros</td>
+<td style="text-align:left">1 to 12</td>
+</tr>
+<tr>
+<td style="text-align:left">dd</td>
+<td style="text-align:left">Day of the month, 2 digits with leading zeros</td>
+<td style="text-align:left">01 to 31</td>
+</tr>
+<tr>
+<td style="text-align:left">d</td>
+<td style="text-align:left">Day of the month without leading zeros</td>
+<td style="text-align:left">1 to 31</td>
+</tr>
+<tr>
+<td style="text-align:left">HH</td>
+<td style="text-align:left">24-hour format of an hour with leading zeros</td>
+<td style="text-align:left">00 to 23</td>
+</tr>
+<tr>
+<td style="text-align:left">H</td>
+<td style="text-align:left">24-hour format of an hour without leading zeros</td>
+<td style="text-align:left">0 to 23</td>
+</tr>
+<tr>
+<td style="text-align:left">hh</td>
+<td style="text-align:left">12-hour format of an hour without leading zeros</td>
+<td style="text-align:left">01 to 12</td>
+</tr>
+<tr>
+<td style="text-align:left">h</td>
+<td style="text-align:left">12-hour format of an hour with leading zeros</td>
+<td style="text-align:left">1 to 12</td>
+</tr>
+<tr>
+<td style="text-align:left">mm</td>
+<td style="text-align:left">Minutes, with leading zeros</td>
+<td style="text-align:left">00 to 59</td>
+</tr>
+<tr>
+<td style="text-align:left">m</td>
+<td style="text-align:left">Minutes, without leading zeros</td>
+<td style="text-align:left">0 to 59</td>
+</tr>
+<tr>
+<td style="text-align:left">ss</td>
+<td style="text-align:left">Seconds, with leading zeros</td>
+<td style="text-align:left">00 to 59</td>
+</tr>
+<tr>
+<td style="text-align:left">s</td>
+<td style="text-align:left">Seconds, without leading zeros</td>
+<td style="text-align:left">0 to 59</td>
+</tr>
+<tr>
+<td style="text-align:left">SS</td>
+<td style="text-align:left">Milliseconds, with leading zeros</td>
+<td style="text-align:left">000 to 999</td>
+</tr>
+<tr>
+<td style="text-align:left">S</td>
+<td style="text-align:left">Milliseconds, without leading zeros</td>
+<td style="text-align:left">0 to 999</td>
+</tr>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:left">Uppercase Ante meridiem and Post meridiem</td>
+<td style="text-align:left">AM or PM</td>
+</tr>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">Lowercase Ante meridiem and Post meridiem</td>
+<td style="text-align:left">am or pm</td>
+</tr>
+<tr>
+<td style="text-align:left">T</td>
+<td style="text-align:left">Milliseconds, since 1970-1-1 00:00:00 UTC</td>
+<td style="text-align:left">759883437303</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>Random.time( format? )</li>
+<li>Random.datetime( format? )</li>
+<li>Random.now( unit?, format? ) // unit =&gt; year&#x3001;month&#x3001;week&#x3001;day&#x3001;hour&#x3001;minute&#x3001;second&#x3001;week</li>
+</ol>
+<h4 class="mume-header" id="image">Image</h4>
+
+<h5 class="mume-header" id="randomimage">Random.image()</h5>
+
+<ol>
+<li>Random.image()</li>
+<li>Random.image( size )</li>
+<li>Random.image( size, background )</li>
+<li>Random.image( size, background, text )</li>
+<li>Random.image( size, background, foreground, text )</li>
+<li>Random.image( size, background, foreground, format, text )</li>
+</ol>
+<h5 class="mume-header" id="randomdataimage">Random.dataImage()</h5>
+
+<ol>
+<li>Random.dataImage()</li>
+<li>Random.dataImage( size )</li>
+<li>Random.dataImage( size, text )</li>
+</ol>
+<h4 class="mume-header" id="color">Color</h4>
+
+<ol>
+<li>Random.color() // =&gt; #3538B2</li>
+<li>Random.hex() // =&gt; #3538B2</li>
+<li>Random.rgb() // =&gt; rgb(242, 198, 121)</li>
+<li>Random.rgba() // =&gt; rgba(242, 198, 121, 0.13)</li>
+<li>Random.hsl() // =&gt; hsl(345, 82, 71)</li>
+</ol>
+<h4 class="mume-header" id="text">Text</h4>
+
+<ol>
+<li>Random.paragraph( min?, max? )</li>
+<li>Random.cparagraph( min?, max? )</li>
+<li>Random.sentence( min?, max? )</li>
+<li>Random.csentence( min?, max? )</li>
+<li>Random.word( min?, max? )</li>
+<li>Random.cword( pool?, min?, max? )</li>
+<li>Random.title( min?, max? )</li>
+<li>Random.ctitle( min?, max? )</li>
+</ol>
+<h4 class="mume-header" id="name">Name</h4>
+
+<ol>
+<li>Random.first()</li>
+<li>Random.last()</li>
+<li><a href="http://Random.name">Random.name</a>( middle? )</li>
+<li>Random.cfirst()</li>
+<li>Random.clast()</li>
+<li>Random.cname()</li>
+</ol>
+<h4 class="mume-header" id="web">Web</h4>
+
+<ol>
+<li>Random.url( protocol?, host? )</li>
+<li>Random.protocol()</li>
+<li>Random.domain() // &#x57DF;&#x540D;</li>
+<li>Random.tld() // &#x9876;&#x7EA7;&#x57DF;&#x540D;</li>
+<li>Random.email( domain? )</li>
+<li>Random.ip()</li>
+</ol>
+<h4 class="mume-header" id="address">Address</h4>
+
+<ol>
+<li>Random.region()</li>
+<li>Random.province()</li>
+<li>Random.city( prefix? )</li>
+<li>Random.county( prefix? )</li>
+<li>Random.zip()</li>
+</ol>
+<h4 class="mume-header" id="helper">Helper</h4>
+
+<ol>
+<li>Random.capitalize( word )</li>
+<li>Random.upper( str )</li>
+<li>Random.lower( str )</li>
+<li>Random.pick( arr )</li>
+<li>Random.shuffle( arr )</li>
+</ol>
+<h4 class="mume-header" id="miscellaneous">Miscellaneous</h4>
+
+<ol>
+<li>Random.guid()</li>
+<li><a href="http://Random.id">Random.id</a>()</li>
+<li>Random.increment( step? )</li>
+</ol>
+<hr>
+<h3 class="mume-header" id="%E6%89%A9%E5%B1%95">&#x6269;&#x5C55;</h3>
+
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">Random<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">fruit</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fruit <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;apple&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;peach&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;lemon&apos;</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">pick</span><span class="token punctuation">(</span>fruit<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+Random<span class="token punctuation">.</span><span class="token function">fruit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; &apos;peach&apos;</span>
+Mock<span class="token punctuation">.</span><span class="token function">mock</span><span class="token punctuation">(</span><span class="token string">&apos;@fruit&apos;</span><span class="token punctuation">)</span>  <span class="token comment">// =&gt; &apos;lemon&apos;</span>
+Mock<span class="token punctuation">.</span><span class="token function">mock</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  fruit<span class="token punctuation">:</span> <span class="token string">&apos;@fruit&apos;</span> <span class="token comment">// =&gt; &apos;peach&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="mockvalid">Mock.valid()</h3>
+
+<h4 class="mume-header" id="mockvalid-template-data">Mock.valid( template, data )</h4>
+
+<h3 class="mume-header" id="mocktojsonschema">Mock.toJSONSchema()</h3>
+
+<h4 class="mume-header" id="mocktojsonschema-template">Mock.toJSONSchema( template )</h4>
+
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

@@ -18,7 +18,7 @@ class HttpRequest {
         //
       }
     }
-    console.log(config.baseURL);
+    // console.log(config.baseURL);
 
     return config
   }
@@ -35,7 +35,7 @@ class HttpRequest {
         /*Spin.show() */
       }
       this.queue[url] = true
-      console.log(config);
+      console.log("axiosconfig:", config);
 
       return config
     }, error => {
@@ -47,7 +47,7 @@ class HttpRequest {
       // 对响应数据做点什么
       delete this.queue[url]
       const { data, status } = res
-      console.log(res);
+      console.log('axiosres:', res);
       return { data, status }
     }, error => {
       // 对响应错误做点什么
@@ -63,10 +63,13 @@ class HttpRequest {
 
     //变成一个对象,有相同就是后面的覆盖前面
     options = Object.assign(this.getInsideConfig(), options)
-    console.log(options);
+    // console.log(options);
     //添加拦截器
     this.interceptors(instance, options.url)
+    // console.log(options);
     return instance(options)
+
+
   }
 }
 export default HttpRequest
